@@ -7,15 +7,16 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-
+//My routes
 const authRoutes = require("./routes/auth.js");
+const userRoutes = require("./routes/user.js");
 
 //DB Connections
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
     useCreateIndex: true
-}).then(() =>{
+}).then(() => {
     console.log("DB CONNECTED")
 });
 
@@ -26,9 +27,10 @@ app.use(cors());
 
 //My Routes
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 //PORT
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 
 //Starting Server
 app.listen(port, () => {

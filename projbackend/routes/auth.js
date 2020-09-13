@@ -19,7 +19,7 @@ router.get("/signout", signout);
 
 //for testing only
 router.get("/testroute", isSignedIn, (req, res)=>{
-    res.send("A protected route");
+    res.json(req.auth);
 });
 
 module.exports = router;
