@@ -5,7 +5,7 @@ const productSchema = new mongoose.model({
         type:String,
         trim: true,
         require: true,
-        maxlength: 50
+        maxlength: 32
     },
     desciption:{
         type: String,
