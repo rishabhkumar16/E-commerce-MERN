@@ -23,7 +23,7 @@ exports.createCategory = (req, res) => {
     });
 };
 exports.getCategory = (req, res) => {
-    return res.json(req.category);
+    return res.json(req.Category);
 };
 exports.getAllCategory = (req, res) => {
     Category.find().exec((err, categories) => {
@@ -36,7 +36,7 @@ exports.getAllCategory = (req, res) => {
     });
 };
 exports.updateCategory = (req, res) => {
-    const category = req.category;
+    const category = req.Category;
     category.name = req.body.name;
     category.save((err, updatedCategory) => {
         if(err){
@@ -48,7 +48,7 @@ exports.updateCategory = (req, res) => {
     });
 };
 exports.removeCategory = (req, res) => {
-    const category = req.category;
+    const category = req.Category;
     category.remove((err, category) => {
         if(err){
             return res.status(400).json({
