@@ -59,4 +59,4 @@ exports.removeCategory = (req, res) => {
             message: "Successfully Deleted"
         });
     });
-};
+};  
