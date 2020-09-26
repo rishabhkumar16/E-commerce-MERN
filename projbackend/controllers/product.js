@@ -30,7 +30,7 @@ exports.createProduct = (req, res) => {
           !name || !description || !price || !category || !stock
       ){
           return res.status(400).json({
-              error: "Please inclde all fields"
+              error: "Please include all fields"
           });
       }
 
