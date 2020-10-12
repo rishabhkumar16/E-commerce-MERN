@@ -48,6 +48,5 @@ exports.updateStatus = (req, res) => {
                 });
             }
             res.json(order);
-        }
-    );
+        });
 };
