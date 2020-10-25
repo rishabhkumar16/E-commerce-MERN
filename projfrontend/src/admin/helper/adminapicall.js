@@ -1,17 +1,17 @@
-const { API } = require("../../backend");
+import { API } from "../../backend";
 
 export const createCategory = (userId, token, category) => {
-    return fetch(`${API}/category/create/${userId}`,{
-        method: "POST",
-        headers: {
-            Accept: "application/json ",
-            "Content-Type": "application/JSON",
-            Authorization: `Bearer${token}`
-        },
-        body: JSON.stringify(category)
-    })
+  return fetch(`${API}/category/create/${userId}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(category)
+  })
     .then(response => {
-        return response.json();
+      return response.json();
     })
-    .catch(err => console.error(err));
+    .catch(err => console.log(err));
 };
