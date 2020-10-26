@@ -47,7 +47,7 @@ const AddCategory = () => {
     };
     const warningMessage = () => {
         if(error){
-            return <h4 classNtext-success">Failed to created success</h4>
+            return <h4 className="text-success">Failed to created success</h4>
         }
     };
     const myCategoryForm = () => (
