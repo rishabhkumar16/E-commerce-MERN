@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Base from '../core/Base';
+import { getCategories } from './helper/adminapicall';
 
 const  AddProduct = () => {
     
@@ -8,10 +9,32 @@ const  AddProduct = () => {
         name:"",
         description:"",
         price:"",
-        stock:""
+        stock:"",
+        photo: "",
+        category: [],
+        category: "",
+        loading: false,
+        error: "",
+        createdProduct: "",
+        getaRedirect: false,
+        formData: ""        
     });
 
-    const {name, description, price, stock} = values;
+    const {name, description, price, stock, categories, category, loading, error,createdProduct,getaRedirect,formData} = values;
+    const preload = () => {
+        getCategories().then(data => {
+            console.log(data);
+            if(data.error){
+                setValues({...values, error: data.error});
+            }else{
+                setValues({...values,categories:data, formData: new FormData()});
+            }
+        });
+    };
+
+    useEffect(() => {
+        preload();
+    }, []);
 
     const onSubmit = () => {
         //
