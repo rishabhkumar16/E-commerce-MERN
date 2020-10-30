@@ -34,8 +34,8 @@ const AddCategory = () => {
     };
     const goBack = () => {
         return(
-            <div className="mt-5">
-                <Link className="btn btn-sm btn-info mb-3" to="/admin/dashboard"> Admin Home
+            <div className="mt-1">
+                <Link className="btn btn-md btn-dark mb-3" to="/admin/dashboard"> Admin Home
                 </Link>
             </div>
         );
@@ -53,21 +53,22 @@ const AddCategory = () => {
     const myCategoryForm = () => (
         <form>
             <div className="form-group">
-                <p className="lead">Enter the Category Name</p>
+                <p className="lead text-white mt-2">Enter the Category Name</p>
                 <input type="text" className="form-control my-3" autofocus required onChange={handleChange} value={name} placeholder="For Eg. Electronics"/>
-                <button onClick={onSubmit} className="btn btn-outline-info">Create Category</button>
+                <button onClick={onSubmit} className="btn btn-outline-warning">Create Category</button>
             </div>
         </form>
     );
     return (
         <div>
-           <Base title="Create a category here" description="Add a new category" className="container bg-info p-4">
-               <div className="row bg-white rounded">
+           <Base title="Create a category here" description="Add a new category" className="container bg-warning p-4">
+                {goBack()}
+               <div className="row bg-dark rounded">
                    <div className="col-md-8 offset-md-2">
                        {successMessage()}
                        {warningMessage()}
                        {myCategoryForm()} 
-                       {goBack()}
+                       
                    </div>
                </div>
            </Base>
