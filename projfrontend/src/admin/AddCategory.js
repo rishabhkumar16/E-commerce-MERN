@@ -42,12 +42,12 @@ const AddCategory = () => {
     };
     const successMessage = () => {
         if(success){
-            return <h4 className="text-success">Category created success</h4>
+            return <h4 className="text-white">Category created success</h4>
         }
     };
     const warningMessage = () => {
         if(error){
-            return <h4 className="text-success">Failed to created success</h4>
+            return <h4 className="text-white">Failed to created success</h4>
         }
     };
     const myCategoryForm = () => (

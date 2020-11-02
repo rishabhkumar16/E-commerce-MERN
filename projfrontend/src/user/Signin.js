@@ -112,9 +112,9 @@ const Signin = () => {
 
   return (
     <Base title="Sign In page" description="A page for user to sign in!">
-      {signInForm()}
-      {loadingMessage()}
       {errorMessage()}
+      {loadingMessage()}
+      {signInForm()}
       {performRedirect()}
       <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
