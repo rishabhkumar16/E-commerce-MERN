@@ -61,7 +61,7 @@ exports.createProduct = (req, res) => {
   };
 exports.getProduct = (req,res) => {
   req.product.photo = undefined;
-  return re.json(req.product);
+  return res.json(req.product);
 }
 //middleware for image file
 exports.photo = (req, res, next) => {
