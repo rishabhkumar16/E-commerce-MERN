@@ -201,8 +201,8 @@ const UpdateProduct = ({ match }) => {
 
   return (
     <Base
-      title="Add a product here!"
-      description="Welcome to product creation section"
+      title="Update your product here!"
+      description="Welcome to product updation section"
       className="container bg-info p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
