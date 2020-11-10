@@ -8,7 +8,7 @@ export default function Home() {
     
     return (
         <Base title="Home Page" description="Welcome to E-commerce website">
-            <div className="row">
+            <div className="row text-center">
                 <div className="col-4">
                     <Card></Card>
                 </div>
