@@ -2,8 +2,32 @@ import React from "react";
 import ImageHelper from "./helper/ImageHelper";
 
 const Card = ({ 
-  product 
+  product, addtoCart = true, removeFromCart = false
 }) => {
+  const showAddtoCart = (addtoCart) => {
+    return (
+      addtoCart && (
+        <button
+              onClick={() => {}}
+              className="btn btn-block btn-lg btn-outline-warning text-dark shadow rounded mt-2 mb-2"
+            >
+              Add to Cart
+            </button>
+      )
+    );
+  };
+  const showRemoveFromCart = (removeFromCart) => {
+    return (
+      removeFromCart && (
+        <button
+              onClick={() => {}}
+              className="btn btn-block btn-lg btn-outline-danger text-dark shadow rounded mt-2 mb-2"
+            >
+              Remove from cart
+            </button>
+      )
+    );
+  };
   return (
     <div className="card text-dark bg-white border ">
       <div className="card-header lead text-center">A photo from pexels</div>
@@ -20,20 +44,10 @@ const Card = ({
         </h4>
         <div className="row">
           <div className="col-6">
-            <button
-              onClick={() => {}}
-              className="btn btn-block btn-lg btn-outline-warning text-dark shadow rounded mt-2 mb-2"
-            >
-              Add to Cart
-            </button>
+            {showAddtoCart(addtoCart)}
           </div>
           <div className="col-6">
-            <button
-              onClick={() => {}}
-              className="btn btn-block btn-lg btn-outline-danger text-dark shadow rounded mt-2 mb-2"
-            >
-              Remove from cart
-            </button>
+            {showRemoveFromCart(removeFromCart)}
           </div>
         </div>
       </div>
