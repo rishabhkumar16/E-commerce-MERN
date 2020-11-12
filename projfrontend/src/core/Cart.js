@@ -42,8 +42,8 @@ const Cart = () => {
     return (
         <Base title="Cart" description="Ready to checkout">
             <div className="row ">
-    <div className="col-6">{loadAllProducts()}</div>
-    <div className="col-6">{loadCheckout()}</div>
+                <div className="col-6">{loadAllProducts()}</div>
+                <div className="col-6">{loadCheckout()}</div>
                 
             </div>
         </Base>

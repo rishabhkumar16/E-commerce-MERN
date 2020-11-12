@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Redirect } from "react-router-dom";
-import { addItemToCart } from "./helper/cartHelper";
+import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 import ImageHelper from "./helper/ImageHelper";
 
 const Card = ({ 
@@ -26,7 +26,7 @@ const Card = ({
     }
   }
 
-  const showAddtoCart = (addtoCart) => {
+  const showAddtoCart = addtoCart => {
     return (
       addtoCart && (
         <button
@@ -42,7 +42,9 @@ const Card = ({
     return (
       removeFromCart && (
         <button
-              onClick={() => {}}
+              onClick={() => {
+                removeItemFromCart(product._id);
+              }}
               className="btn btn-block btn-sm btn-outline-danger text-dark shadow rounded mt-2 mb-2"
             >
               Remove from cart
