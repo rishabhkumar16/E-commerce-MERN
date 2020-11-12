@@ -4,12 +4,18 @@ import ImageHelper from "./helper/ImageHelper";
 const Card = ({ 
   product, addtoCart = true, removeFromCart = false
 }) => {
+
+  const cardTitle = product ? product.name : "A photo from pexels"
+  const cardDescription = product ? product.description : "Default description"
+  const cardPrice = product ? product.price : "DEFAULT"
+  const cardCategory = product ? product.category : "DEFAULT"
+
   const showAddtoCart = (addtoCart) => {
     return (
       addtoCart && (
         <button
               onClick={() => {}}
-              className="btn btn-block btn-lg btn-outline-warning text-dark shadow rounded mt-2 mb-2"
+              className="btn btn-block btn-sm btn-outline-warning text-dark shadow rounded mt-2 mb-2"
             >
               Add to Cart
             </button>
@@ -21,7 +27,7 @@ const Card = ({
       removeFromCart && (
         <button
               onClick={() => {}}
-              className="btn btn-block btn-lg btn-outline-danger text-dark shadow rounded mt-2 mb-2"
+              className="btn btn-block btn-sm btn-outline-danger text-dark shadow rounded mt-2 mb-2"
             >
               Remove from cart
             </button>
@@ -30,18 +36,18 @@ const Card = ({
   };
   return (
     <div className="card text-dark bg-white border ">
-      <div className="card-header lead text-center">A photo from pexels</div>
+      <div className="card-header lead text-center">{cardTitle}</div>
       <div className="card-body">
         <ImageHelper product = {product}/>
-        <h5 className="mt-2 align-baseline">
+        <h6 className="mt-2 align-baseline">
           <span className="badge badge-secondary">Category</span>
+        </h6>
+        <h5 className=" rounded font-weight-normal text-dark mt-1 text-left">
+          <span className="ml-2"> {cardDescription} </span>
         </h5>
-        <h4 className=" rounded font-weight-normal text-dark mt-1 text-left">
-          <span className="ml-2"> this photo looks great </span>
-        </h4>
-        <h4 className="text-left">
-          <span className="ml-2"> $ 5 </span>{" "}
-        </h4>
+        <h6 className="text-left">
+          <span className="ml-2"> $ {cardPrice} </span>{" "}
+        </h6>
         <div className="row">
           <div className="col-6">
             {showAddtoCart(addtoCart)}
