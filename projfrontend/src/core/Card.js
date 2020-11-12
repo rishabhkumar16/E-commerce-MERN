@@ -4,7 +4,7 @@ import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 import ImageHelper from "./helper/ImageHelper";
 
 const Card = ({ 
-  product, addtoCart = true, removeFromCart = false
+  product, addtoCart = true, removeFromCart = false, setReload = f => f, reload = undefined
 }) => {
 
   const cardTitle = product ? product.name : "A photo from pexels"
@@ -15,10 +15,8 @@ const Card = ({
   const[count, setCount] = useState(product.count);
   
   const addToCart = () => {
-      addItemToCart(product,() => {
-        setRedirect(true)
-      }) 
-  }
+    addItemToCart(product, () => setRedirect(true));
+  };
 
   const getARedirect = (redirect) => {
     if (redirect){
@@ -44,6 +42,7 @@ const Card = ({
         <button
               onClick={() => {
                 removeItemFromCart(product._id);
+                setReload(!reload);
               }}
               className="btn btn-block btn-sm btn-outline-danger text-dark shadow rounded mt-2 mb-2"
             >
